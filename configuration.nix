@@ -21,6 +21,8 @@
   # The missing pieces required for UEFI:
   boot.loader.grub.efiSupport = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.efi.efiSysMountPoint = "/boot"; 
+  boot.loader.timeout = 5;
 
   # Use Xanmod kernel.
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_xanmod_latest;
