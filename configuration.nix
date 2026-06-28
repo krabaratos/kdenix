@@ -14,7 +14,12 @@
   nixpkgs.config.allowUnfree = true; #unfree
   
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.grub.enable = true;
+  boot.loader.grub.device = "nodev";
+  boot.loader.grub.useOSProber = true;
+
+  # The missing pieces required for UEFI:
+  boot.loader.grub.efiSupport = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Use Xanmod kernel.
